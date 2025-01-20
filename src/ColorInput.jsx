@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 
 function ColorInput(){
     const [color, setColor] = useState('#ffffff')
-    const [text, setText] = useState ("#ffffff")
 
     const boxStyles = {
         height: "200px",
@@ -20,12 +19,11 @@ function ColorInput(){
     
     function handleColorSelection(event){
     setColor(event.target.value)
-    setText(event.target.textContent)
     }
 
     return(
         <>
-            <div style={boxStyles}>Selected color:{text}</div>
+            <div style={boxStyles}>Selected color:{color}</div>
             <label>Select a color</label>
             <input type="color" value={color} onChange={(e) =>handleColorSelection(e)}></input>
         </>
